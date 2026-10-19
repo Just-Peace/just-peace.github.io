@@ -35,6 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Contact link handler (matches Pallot: constructed on click to protect from scrapers)
+  document.querySelectorAll('a[data-contact]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      location.href = ['mailto:', ['admin', 'just-peace.org'].join('@')].join('');
+    });
+  });
+
   // =========================================================================
   // Task 1: Headline Word Animation (cycles through words, settles on "yours!")
   // =========================================================================
