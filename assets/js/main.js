@@ -35,37 +35,164 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Theme toggle with Pallot storage & event
+  // =========================================================================
+  // Task 1: Headline Word Animation (cycles through words, settles on "yours!")
+  // =========================================================================
+  const animatedWordEl = document.getElementById('animated-word');
+  if (animatedWordEl) {
+    const words = [
+      'power.',
+      'responsibility.',
+      'choice.',
+      'private.',
+      'rights.',
+      'voice.',
+      'future.',
+      'yours!'
+    ];
+    let currentIndex = 0;
+
+    function transitionToNextWord() {
+      if (currentIndex < words.length - 1) {
+        currentIndex++;
+        animatedWordEl.classList.add('anim-out');
+
+        setTimeout(() => {
+          animatedWordEl.textContent = words[currentIndex];
+          animatedWordEl.classList.remove('anim-out');
+          animatedWordEl.classList.add('anim-in');
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              animatedWordEl.classList.remove('anim-in');
+            });
+          });
+
+          if (currentIndex === words.length - 1) {
+            // Permanently settled on "yours!"
+            setTimeout(() => {
+              animatedWordEl.classList.add('settled');
+            }, 300);
+          } else {
+            setTimeout(transitionToNextWord, 1200);
+          }
+        }, 220);
+      }
+    }
+
+    // Begin cycle after initial delay
+    setTimeout(transitionToNextWord, 1400);
+  }
+
+  // =========================================================================
+  // Theme Toggle: Light -> Dark -> System (with half sun/half moon icon)
+  // =========================================================================
   const themeBtn = document.getElementById('theme-toggle-btn');
   if (themeBtn) {
-    function getTheme() {
-      return document.documentElement.dataset.theme || 'light';
+    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // Icons:
+    // 1. Sun (Light)
+    const iconSun = `
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+    `;
+
+    // 2. Moon (Dark)
+    const iconMoon = `
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    `;
+
+    // 3. Half Sun / Half Moon (System auto)
+    const iconSystem = `
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      </svg>
+    `;
+
+    function getPreference() {
+      try {
+        const stored = JSON.parse(localStorage.getItem('pallot.ui.v1')) ?? {};
+        if (stored.theme === 'light') return 'light';
+        if (stored.theme === 'dark') return 'dark';
+        return 'system';
+      } catch {
+        return 'system';
+      }
     }
 
-    function updateThemeBtnIcon() {
-      const isDark = getTheme() === 'dark';
-      themeBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-      themeBtn.innerHTML = isDark
-        ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`
-        : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+    function updateButtonUI() {
+      const pref = getPreference();
+      if (pref === 'light') {
+        themeBtn.innerHTML = iconSun;
+        themeBtn.setAttribute('title', 'Theme: Light (click for dark)');
+        themeBtn.setAttribute('aria-label', 'Theme: Light. Click for dark mode.');
+      } else if (pref === 'dark') {
+        themeBtn.innerHTML = iconMoon;
+        themeBtn.setAttribute('title', 'Theme: Dark (click for system)');
+        themeBtn.setAttribute('aria-label', 'Theme: Dark. Click for system theme.');
+      } else {
+        themeBtn.innerHTML = iconSystem;
+        themeBtn.setAttribute('title', 'Theme: System (click for light)');
+        themeBtn.setAttribute('aria-label', 'Theme: System. Click for light mode.');
+      }
     }
 
-    updateThemeBtnIcon();
+    updateButtonUI();
 
     themeBtn.addEventListener('click', () => {
-      const current = getTheme();
-      const nextTheme = current === 'dark' ? 'light' : 'dark';
-
-      try {
-        const stored = JSON.parse(localStorage.getItem('pallot.ui.v1') || '{}');
-        stored.theme = nextTheme;
-        localStorage.setItem('pallot.ui.v1', JSON.stringify(stored));
-      } catch (err) {
-        // localStorage fallback
+      const current = getPreference();
+      let next;
+      if (current === 'system') {
+        next = 'light';
+      } else if (current === 'light') {
+        next = 'dark';
+      } else {
+        next = 'system';
       }
 
+      try {
+        const stored = JSON.parse(localStorage.getItem('pallot.ui.v1')) ?? {};
+        stored.theme = next;
+        localStorage.setItem('pallot.ui.v1', JSON.stringify(stored));
+      } catch (err) {
+        // Fallback
+      }
+
+      // Apply theme to document
+      if (next === 'light' || next === 'dark') {
+        document.documentElement.dataset.theme = next;
+      } else {
+        document.documentElement.dataset.theme = darkQuery.matches ? 'dark' : 'light';
+      }
+
+      // Notify any listeners
       document.dispatchEvent(new CustomEvent('pallot:theme'));
-      setTimeout(updateThemeBtnIcon, 50);
+      updateButtonUI();
+    });
+
+    darkQuery.addEventListener('change', () => {
+      if (getPreference() === 'system') {
+        document.documentElement.dataset.theme = darkQuery.matches ? 'dark' : 'light';
+        updateButtonUI();
+      }
     });
   }
 });

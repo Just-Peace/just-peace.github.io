@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Just-Peace · Pallot Civic Technology</title>
-  <meta name="description" content="Pallot is an open-source civic technology platform by Just-Peace that helps voters research candidates, analyze funding and endorsements, and prepare for Election Day.">
+  <meta name="description" content="Just-Peace creates open-source, privacy-first civic tools like Pallot that empower voters to research candidates and prepare for Election Day.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://www.just-peace.org/">
 
   <!-- OpenGraph / Social -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Pallot: Your vote is yours! · Just-Peace">
-  <meta property="og:description" content="Open-source civic technology that helps voters research candidates and prepare for Election Day.">
+  <meta property="og:title" content="Just-Peace · Pallot: Your vote is yours!">
+  <meta property="og:description" content="Open-source, privacy-first civic technology for candidate research and informed voting.">
   <meta property="og:url" content="https://www.just-peace.org/">
   <meta property="og:image" content="https://www.just-peace.org/assets/img/qr-code.png">
 
@@ -36,7 +36,9 @@
         </a>
 
         <div class="header-nav">
-          <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle color theme" aria-label="Toggle theme">
+          <a href="#about" class="nav-link-subtle">About Just-Peace</a>
+
+          <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" title="Theme setting" aria-label="Toggle theme">
             <!-- Icon injected by main.js -->
           </button>
 
@@ -65,11 +67,11 @@
             </div>
 
             <h1 id="hero-title" class="hero-title">
-              Your vote is yours.
+              Your vote is <span class="animated-word-container"><span id="animated-word" class="animated-word">power.</span></span>
             </h1>
 
             <p class="hero-lede">
-              <strong>Pallot</strong> is an open-source civic technology website that helps voters research candidates and prepare for Election Day. Sourced from verified public records, campaign finance filings, and candidate listings.
+              <strong>Pallot</strong> is an open-source, privacy-first civic platform by Just-Peace. Research candidates, evaluate campaign finance, and prepare your ballot notes—completely free, with no accounts, and zero tracking.
             </p>
 
             <div class="hero-actions">
@@ -90,7 +92,11 @@
               </div>
               <div class="hero-badge-item">
                 <span class="check" aria-hidden="true">&#10003;</span>
-                <span>No Ads or Tracking</span>
+                <span>No Accounts Required</span>
+              </div>
+              <div class="hero-badge-item">
+                <span class="check" aria-hidden="true">&#10003;</span>
+                <span>Privacy First</span>
               </div>
               <div class="hero-badge-item">
                 <span class="check" aria-hidden="true">&#10003;</span>
@@ -167,6 +173,35 @@
           </div>
         </section>
 
+        <!-- About Just-Peace Organization -->
+        <section class="panel about-org-panel" id="about" aria-labelledby="about-heading">
+          <h2 id="about-heading">About Just-Peace</h2>
+          <p class="org-lede">
+            Just-Peace is for justice and peace. Because peace, to be real and lasting, must be just.
+          </p>
+          <p>
+            Our purpose is to spread and advocate for peace and justice throughout the world. True peace is never merely the absence of tension—it demands fair treatment, accountable institutions, and respect for human rights everywhere.
+          </p>
+          <p>
+            Proudly operated from the United States, we focus on civic empowerment and privacy-first solutions. We build open-source tools that put clear, reliable information directly in people’s hands so communities can make their own informed decisions.
+          </p>
+
+          <div class="org-points-grid">
+            <div class="org-point-card">
+              <h4>Civic Empowerment</h4>
+              <p>Providing straightforward, transparent election tools so voters can evaluate who represents them and make confident decisions.</p>
+            </div>
+            <div class="org-point-card">
+              <h4>Privacy First</h4>
+              <p>No tracking, no user profiles, and no ads. What you research and how you vote is your business alone.</p>
+            </div>
+            <div class="org-point-card">
+              <h4>Free &amp; Account-Free</h4>
+              <p>Accessible to every voter without logins, paywalls, or personal data requests. Open-source under the MIT license.</p>
+            </div>
+          </div>
+        </section>
+
         <!-- Coverage & Scope Split -->
         <section class="info-columns" aria-labelledby="coverage-heading">
           
@@ -189,10 +224,10 @@
           </div>
 
           <div class="panel prose">
-            <h2>Independent &amp; Open Source</h2>
+            <h2>Independent &amp; Nonpartisan</h2>
             <ul>
               <li><strong>Not an endorsement:</strong> Pallot does not back any candidate, party, or cause. It aggregates public data so voters can decide for themselves.</li>
-              <li><strong>No tracking or accounts:</strong> We do not track you, sell data, or require an account. Your picks are stored locally on your device.</li>
+              <li><strong>Zero tracking:</strong> We do not track you, sell data, or require an account. Your picks are stored locally in your browser.</li>
               <li><strong>Open code:</strong> All code is published under the MIT license on <a href="https://github.com/Just-Peace" target="_blank" rel="noopener noreferrer">GitHub</a>.</li>
               <li><strong>Official registration:</strong> To check your registration status or find your polling station, visit <a href="https://vote.gov/" target="_blank" rel="noopener noreferrer">Vote.gov</a>.</li>
             </ul>
@@ -200,19 +235,19 @@
 
         </section>
 
-        <!-- Direct Action Banner -->
+        <!-- Direct Action Banner (Swapped buttons: GitHub on left, App on right) -->
         <section class="panel direct-banner" aria-labelledby="cta-heading">
           <h2 id="cta-heading">Ready to research your ballot?</h2>
           <p>
             Get instant access to candidate information, campaign contributions, and ballot outlines for your area.
           </p>
           <div class="button-row" style="justify-content: center;">
+            <a href="https://github.com/Just-Peace/Pallot" target="_blank" rel="noopener noreferrer" class="btn large" id="bottom-github-btn">
+              GitHub Repository
+            </a>
             <a href="https://pallot.just-peace.org" target="_blank" rel="noopener noreferrer" class="btn primary large with-icon" id="bottom-launch-btn">
               <span>Go to pallot.just-peace.org</span>
               <span aria-hidden="true">&rarr;</span>
-            </a>
-            <a href="https://github.com/Just-Peace/Pallot" target="_blank" rel="noopener noreferrer" class="btn large">
-              GitHub Repository
             </a>
           </div>
         </section>
@@ -229,6 +264,7 @@
         </div>
 
         <nav class="footer-nav" aria-label="Footer links">
+          <a href="#about">About</a>
           <a href="https://pallot.just-peace.org" target="_blank" rel="noopener noreferrer">Pallot App</a>
           <a href="https://github.com/Just-Peace" target="_blank" rel="noopener noreferrer">Organization</a>
           <a href="https://github.com/Just-Peace/Pallot" target="_blank" rel="noopener noreferrer">GitHub</a>
