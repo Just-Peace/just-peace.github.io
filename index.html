@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Just-Peace · Pallot Civic Technology</title>
-  <meta name="description" content="Just-Peace creates open-source, privacy-first civic tools like Pallot that empower voters to research candidates and prepare for Election Day.">
+  <title>Just-Peace · Civic Technology &amp; Empowerment</title>
+  <meta name="description" content="Just-Peace is an open-source civic technology organization advocating for justice, peace, and voter empowerment through privacy-first solutions.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://www.just-peace.org/">
 
   <!-- OpenGraph / Social -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Just-Peace · Pallot: Your vote is yours!">
-  <meta property="og:description" content="Open-source, privacy-first civic technology for candidate research and informed voting.">
+  <meta property="og:title" content="Just-Peace · Civic Technology &amp; Empowerment">
+  <meta property="og:description" content="Advocating for justice and peace through privacy-first civic technology. Home of Pallot.">
   <meta property="og:url" content="https://www.just-peace.org/">
   <meta property="og:image" content="https://www.just-peace.org/assets/img/qr-code.png">
 
@@ -31,12 +31,13 @@
     <header class="landing-header">
       <div class="landing-container header-row">
         <a href="https://www.just-peace.org" class="brand" aria-label="Just-Peace homepage">
-          <img src="assets/img/favicon.svg" alt="Pallot logo" class="logo" width="28" height="28">
-          <span class="brand-name">Just-Peace <span>· Pallot</span></span>
+          <img src="assets/img/favicon.svg" alt="Just-Peace logo" class="logo" width="28" height="28">
+          <span class="brand-name">Just-Peace</span>
         </a>
 
         <div class="header-nav">
-          <a href="#about" class="nav-link-subtle">About Just-Peace</a>
+          <a href="#about" class="nav-link-subtle">About</a>
+          <a href="#pallot" class="nav-link-subtle">Pallot</a>
 
           <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" title="Theme setting" aria-label="Toggle theme">
             <!-- Icon injected by main.js -->
@@ -47,7 +48,7 @@
           </a>
 
           <a href="https://pallot.just-peace.org" target="_blank" rel="noopener noreferrer" class="btn primary small with-icon" id="top-nav-launch">
-            <span>Launch App</span>
+            <span>Launch Pallot</span>
             <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -58,32 +59,85 @@
     <main class="landing-main" id="main-content">
       <div class="landing-container">
 
-        <!-- Hero Panel -->
-        <section class="panel hero-panel" aria-labelledby="hero-title">
-          <div class="hero-left">
-            <div class="hero-tag">
-              <span class="dot"></span>
-              <span>Open-Source Civic Technology</span>
+        <!-- ================================================================= -->
+        <!-- 1. ABOUT JUST-PEACE (First Thing on the Page)                     -->
+        <!-- ================================================================= -->
+        <section class="panel about-hero-panel" id="about" aria-labelledby="about-heading">
+          <div class="hero-tag">
+            <span class="dot"></span>
+            <span>Civic Empowerment &amp; Human Dignity</span>
+          </div>
+
+          <h1 id="about-heading" class="org-headline">About Just-Peace</h1>
+
+          <p class="org-lede">
+            Just-Peace is for justice and peace. Because peace, to be real and lasting, must be just.
+          </p>
+
+          <div class="org-body-text">
+            <p>
+              Our purpose is to spread and advocate for peace and justice throughout the world. True peace is never merely the absence of tension—it demands fair treatment, honest representation, and respect for human rights everywhere.
+            </p>
+            <p>
+              Proudly operated from the United States, we work on civic empowerment and privacy-first solutions. We build transparent, open-source technology that puts genuine power back into the hands of everyday people. No tracking, no paywalls, and no compromises on voter privacy.
+            </p>
+          </div>
+
+          <div class="org-principles-grid">
+            <div class="org-principle-card">
+              <div class="principle-icon" aria-hidden="true">⚖️</div>
+              <div>
+                <h4>Justice &amp; Peace</h4>
+                <p>Advocating for lasting peace rooted in fairness, equal rights, and accountable representation.</p>
+              </div>
+            </div>
+            <div class="org-principle-card">
+              <div class="principle-icon" aria-hidden="true">🗳️</div>
+              <div>
+                <h4>Civic Empowerment</h4>
+                <p>Building open tools that demystify elections and give voters clear, unfiltered information.</p>
+              </div>
+            </div>
+            <div class="org-principle-card">
+              <div class="principle-icon" aria-hidden="true">🔒</div>
+              <div>
+                <h4>Privacy First</h4>
+                <p>Zero user tracking, no profiles, and no ads. Always free and public under the MIT license.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 2. UNIFIED PALLOT PRODUCT CARD                                    -->
+        <!-- ================================================================= -->
+        <section class="panel unified-pallot-card" id="pallot" aria-labelledby="pallot-card-title">
+          
+          <!-- Card Header -->
+          <header class="pallot-card-header">
+            <div class="product-badge">
+              <img src="assets/img/favicon.svg" alt="Pallot emblem" class="product-logo" width="38" height="38">
+              <div class="product-badge-text">
+                <span class="product-label">Featured Product</span>
+                <h2 id="pallot-card-title" class="product-title">Pallot</h2>
+              </div>
             </div>
 
-            <h1 id="hero-title" class="hero-title">
+            <a href="https://pallot.just-peace.org" target="_blank" rel="noopener noreferrer" class="btn primary small with-icon">
+              <span>Launch Pallot</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </header>
+
+          <!-- Animated Headline Block -->
+          <div class="pallot-hero-block">
+            <h3 class="hero-title">
               Your vote is <span class="animated-word-container"><span id="animated-word" class="animated-word">power.</span></span>
-            </h1>
+            </h3>
 
             <p class="hero-lede">
-              <strong>Pallot</strong> is an open-source, privacy-first civic platform by Just-Peace. Research candidates, evaluate campaign finance, and prepare your ballot notes—completely free, with no accounts, and zero tracking.
+              <strong>Pallot</strong> is our flagship open-source civic technology platform that helps voters research candidates, analyze campaign contributions, and prepare for Election Day. Completely free, with no accounts, and zero tracking.
             </p>
-
-            <div class="hero-actions">
-              <a href="https://pallot.just-peace.org" target="_blank" rel="noopener noreferrer" class="btn primary large with-icon" id="hero-launch-btn">
-                <span>Open Ballot Helper</span>
-                <span aria-hidden="true">&rarr;</span>
-              </a>
-
-              <a href="https://github.com/Just-Peace/Pallot" target="_blank" rel="noopener noreferrer" class="btn large" id="hero-source-btn">
-                <span>View Source Code</span>
-              </a>
-            </div>
 
             <div class="hero-badges">
               <div class="hero-badge-item">
@@ -105,36 +159,48 @@
             </div>
           </div>
 
-          <!-- Hero QR Box -->
-          <div class="hero-qr-box">
-            <div class="qr-frame">
-              <img src="assets/img/qr-code.png" alt="Scan QR code to visit pallot.just-peace.org" class="qr-img" width="180" height="180">
+          <!-- QR Code & Direct Access Row -->
+          <div class="pallot-access-bar">
+            <div class="access-qr-box">
+              <div class="qr-frame">
+                <img src="assets/img/qr-code.png" alt="Scan QR code to visit pallot.just-peace.org" class="qr-img" width="110" height="110">
+              </div>
+              <div class="qr-meta">
+                <strong>Scan on Mobile</strong>
+                <p>Take your ballot helper with you to the polls</p>
+                <div class="qr-domain-chip">
+                  <a href="https://pallot.just-peace.org" target="_blank" rel="noopener noreferrer" class="qr-domain-link">
+                    pallot.just-peace.org
+                  </a>
+                  <button type="button" class="qr-copy-btn" id="copy-domain-btn" aria-label="Copy website link">
+                    Copy
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="qr-title">Scan on Mobile</div>
-            <div class="qr-sub">Take your ballot helper with you to the polls</div>
-            <div class="qr-domain-chip">
-              <a href="https://pallot.just-peace.org" target="_blank" rel="noopener noreferrer" class="qr-domain-link">
-                pallot.just-peace.org
-              </a>
-              <button type="button" class="qr-copy-btn" id="copy-domain-btn" aria-label="Copy website link">
-                Copy
-              </button>
+
+            <div class="access-cta-box">
+              <h4>Direct Browser Access</h4>
+              <p>Works right in your mobile or desktop browser without installing anything.</p>
+              <div class="button-row">
+                <a href="https://github.com/Just-Peace/Pallot" target="_blank" rel="noopener noreferrer" class="btn">
+                  GitHub Repository
+                </a>
+                <a href="https://pallot.just-peace.org" target="_blank" rel="noopener noreferrer" class="btn primary with-icon" id="mid-launch-btn">
+                  <span>Launch Pallot</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
             </div>
           </div>
-        </section>
 
-        <!-- The 3 Pillars (Directly from Flyer) -->
-        <section aria-labelledby="pillars-heading">
-          <h2 id="pillars-heading" class="sr-only">Features</h2>
-          <div class="pillars-grid">
-
-            <!-- Pillar 1: Find Ballot -->
-            <div class="panel pillar-card">
+          <!-- The 3 Pillars (Find • Research • Compare & Print) -->
+          <div class="pallot-features-subgrid">
+            <!-- Pillar 1 -->
+            <div class="feature-subcard">
               <div class="pillar-icon-box" aria-hidden="true">📍</div>
-              <h2 class="pillar-title">Find Ballot</h2>
-              <p class="pillar-summary">
-                Candidates in your area. Look up races from your home address or voter registration card anywhere in the 50 states and DC.
-              </p>
+              <h4>Find Ballot</h4>
+              <p>Candidates in your area. Look up races from your home address or voter registration card anywhere in the 50 states and DC.</p>
               <ul class="pillar-list">
                 <li>Federal, state, district, county &amp; precinct races</li>
                 <li>District outlines and precinct maps</li>
@@ -142,13 +208,11 @@
               </ul>
             </div>
 
-            <!-- Pillar 2: Research Candidates -->
-            <div class="panel pillar-card">
+            <!-- Pillar 2 -->
+            <div class="feature-subcard">
               <div class="pillar-icon-box" aria-hidden="true">🔍</div>
-              <h2 class="pillar-title">Research Candidates</h2>
-              <p class="pillar-summary">
-                Funding, endorsements, and issue positions side by side. Inspect what public records and independent sources report.
-              </p>
+              <h4>Research Candidates</h4>
+              <p>Funding, endorsements, and issue positions side by side. Inspect what public records and independent sources report.</p>
               <ul class="pillar-list">
                 <li>Campaign money raised via FEC &amp; state disclosures</li>
                 <li>Wikidata profiles, bios, and officeholders</li>
@@ -156,100 +220,67 @@
               </ul>
             </div>
 
-            <!-- Pillar 3: Compare and Print -->
-            <div class="panel pillar-card">
+            <!-- Pillar 3 -->
+            <div class="feature-subcard">
               <div class="pillar-icon-box" aria-hidden="true">🗳️</div>
-              <h2 class="pillar-title">Compare and Print</h2>
-              <p class="pillar-summary">
-                Pick and print your notes. Weigh every race thoughtfully and generate a clean printout to bring directly to your voting booth.
-              </p>
+              <h4>Compare and Print</h4>
+              <p>Pick and print your notes. Weigh every race thoughtfully and generate a clean printout to bring directly to your voting booth.</p>
               <ul class="pillar-list">
                 <li>Take notes on each candidate and ballot measure</li>
                 <li>Print a pocket-ready ballot summary</li>
-                <li>100% private: your choices never leave your browser</li>
+                <li>100% private: choices never leave your browser</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Where it covers & Independent / Nonpartisan Details -->
+          <div class="pallot-details-split">
+            <div class="details-pane">
+              <h4>Where it covers</h4>
+              <ul class="coverage-list">
+                <li>
+                  <strong>Full ballot: Texas</strong>
+                  <span>Every federal, state, district, county, and precinct race in official ballot order from the Texas Secretary of State.</span>
+                </li>
+                <li>
+                  <strong>Official candidate lists</strong>
+                  <span>Michigan, North Carolina, Pennsylvania, Florida, and Virginia: Congress, statewide offices, Legislature, and courts.</span>
+                </li>
+                <li>
+                  <strong>Congress nationwide: All 50 states &amp; DC</strong>
+                  <span>U.S. Senate and House races from FEC filings for all candidates who raised $5,000 or more.</span>
+                </li>
               </ul>
             </div>
 
-          </div>
-        </section>
-
-        <!-- About Just-Peace Organization -->
-        <section class="panel about-org-panel" id="about" aria-labelledby="about-heading">
-          <h2 id="about-heading">About Just-Peace</h2>
-          <p class="org-lede">
-            Just-Peace is for justice and peace. Because peace, to be real and lasting, must be just.
-          </p>
-          <p>
-            Our purpose is to spread and advocate for peace and justice throughout the world. True peace is never merely the absence of tension—it demands fair treatment, accountable institutions, and respect for human rights everywhere.
-          </p>
-          <p>
-            Proudly operated from the United States, we focus on civic empowerment and privacy-first solutions. We build open-source tools that put clear, reliable information directly in people’s hands so communities can make their own informed decisions.
-          </p>
-
-          <div class="org-points-grid">
-            <div class="org-point-card">
-              <h4>Civic Empowerment</h4>
-              <p>Providing straightforward, transparent election tools so voters can evaluate who represents them and make confident decisions.</p>
-            </div>
-            <div class="org-point-card">
-              <h4>Privacy First</h4>
-              <p>No tracking, no user profiles, and no ads. What you research and how you vote is your business alone.</p>
-            </div>
-            <div class="org-point-card">
-              <h4>Free &amp; Account-Free</h4>
-              <p>Accessible to every voter without logins, paywalls, or personal data requests. Open-source under the MIT license.</p>
+            <div class="details-pane">
+              <h4>Independent &amp; Nonpartisan</h4>
+              <ul class="principles-list">
+                <li><strong>Not an endorsement:</strong> Pallot does not back any candidate, party, or cause. It aggregates public data so voters can decide for themselves.</li>
+                <li><strong>Zero tracking:</strong> We do not track you, sell data, or require an account. Your picks are stored locally in your browser.</li>
+                <li><strong>Open code:</strong> All code is published under the MIT license on <a href="https://github.com/Just-Peace/Pallot" target="_blank" rel="noopener noreferrer">GitHub</a>.</li>
+                <li><strong>Official registration:</strong> To check your registration status or find your polling station, visit <a href="https://vote.gov/" target="_blank" rel="noopener noreferrer">Vote.gov</a>.</li>
+              </ul>
             </div>
           </div>
-        </section>
 
-        <!-- Coverage & Scope Split -->
-        <section class="info-columns" aria-labelledby="coverage-heading">
-          
-          <div class="panel prose">
-            <h2 id="coverage-heading">Where it covers</h2>
-            <ul class="coverage-list">
-              <li>
-                <strong>Full ballot: Texas</strong>
-                <span>Every federal, state, district, county and precinct race in ballot order from the Texas Secretary of State.</span>
-              </li>
-              <li>
-                <strong>Official candidate lists</strong>
-                <span>Michigan, North Carolina, Pennsylvania, Florida and Virginia: Congress, statewide offices, Legislature and courts.</span>
-              </li>
-              <li>
-                <strong>Congress nationwide: All 50 states &amp; DC</strong>
-                <span>U.S. Senate and House races from FEC filings for all candidates who raised $5,000 or more.</span>
-              </li>
-            </ul>
-          </div>
+          <!-- Card Action Footer (Swapped buttons: GitHub on left, Launch Pallot on right) -->
+          <footer class="pallot-card-footer">
+            <div class="footer-cta-text">
+              <h4>Ready to research your ballot?</h4>
+              <p>Get instant access to candidate information, campaign contributions, and ballot outlines for your area.</p>
+            </div>
+            <div class="button-row">
+              <a href="https://github.com/Just-Peace/Pallot" target="_blank" rel="noopener noreferrer" class="btn large" id="bottom-github-btn">
+                GitHub Repository
+              </a>
+              <a href="https://pallot.just-peace.org" target="_blank" rel="noopener noreferrer" class="btn primary large with-icon" id="bottom-launch-btn">
+                <span>Launch Pallot</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </footer>
 
-          <div class="panel prose">
-            <h2>Independent &amp; Nonpartisan</h2>
-            <ul>
-              <li><strong>Not an endorsement:</strong> Pallot does not back any candidate, party, or cause. It aggregates public data so voters can decide for themselves.</li>
-              <li><strong>Zero tracking:</strong> We do not track you, sell data, or require an account. Your picks are stored locally in your browser.</li>
-              <li><strong>Open code:</strong> All code is published under the MIT license on <a href="https://github.com/Just-Peace" target="_blank" rel="noopener noreferrer">GitHub</a>.</li>
-              <li><strong>Official registration:</strong> To check your registration status or find your polling station, visit <a href="https://vote.gov/" target="_blank" rel="noopener noreferrer">Vote.gov</a>.</li>
-            </ul>
-          </div>
-
-        </section>
-
-        <!-- Direct Action Banner (Swapped buttons: GitHub on left, App on right) -->
-        <section class="panel direct-banner" aria-labelledby="cta-heading">
-          <h2 id="cta-heading">Ready to research your ballot?</h2>
-          <p>
-            Get instant access to candidate information, campaign contributions, and ballot outlines for your area.
-          </p>
-          <div class="button-row" style="justify-content: center;">
-            <a href="https://github.com/Just-Peace/Pallot" target="_blank" rel="noopener noreferrer" class="btn large" id="bottom-github-btn">
-              GitHub Repository
-            </a>
-            <a href="https://pallot.just-peace.org" target="_blank" rel="noopener noreferrer" class="btn primary large with-icon" id="bottom-launch-btn">
-              <span>Go to pallot.just-peace.org</span>
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
         </section>
 
       </div>
@@ -265,6 +296,7 @@
 
         <nav class="footer-nav" aria-label="Footer links">
           <a href="#about">About</a>
+          <a href="#pallot">Pallot</a>
           <a href="https://pallot.just-peace.org" target="_blank" rel="noopener noreferrer">Pallot App</a>
           <a href="https://github.com/Just-Peace" target="_blank" rel="noopener noreferrer">Organization</a>
           <a href="https://github.com/Just-Peace/Pallot" target="_blank" rel="noopener noreferrer">GitHub</a>
