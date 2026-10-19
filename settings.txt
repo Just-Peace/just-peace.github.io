@@ -1,0 +1,13 @@
+# Just-Peace Organization Site Settings
+organization=Just-Peace
+domain=www.just-peace.org
+cname=www.just-peace.org
+primary_app=https://pallot.just-peace.org
+repository=git@github.com:Just-Peace/just-peace.github.io.git
+primary_branch=develop
+license=MIT
+operating_region=United States
+technology_stack=HTML5, Vanilla CSS, Vanilla JavaScript
+cloudflare_proxy=true
+ssl_mode=Full
+last_updated=2026-10-19

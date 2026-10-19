@@ -289,8 +289,6 @@
 
 .animated-word.settled {
   color: var(--accent);
-  border-bottom: 3px solid var(--accent);
-  padding-bottom: 2px;
   animation: settlePulse 0.5s ease-out;
 }
 

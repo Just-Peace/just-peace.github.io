@@ -52,36 +52,41 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     let currentIndex = 0;
 
-    function transitionToNextWord() {
-      if (currentIndex < words.length - 1) {
-        currentIndex++;
-        animatedWordEl.classList.add('anim-out');
+    function stepToWord(targetIndex) {
+      animatedWordEl.classList.add('anim-out');
 
-        setTimeout(() => {
-          animatedWordEl.textContent = words[currentIndex];
-          animatedWordEl.classList.remove('anim-out');
-          animatedWordEl.classList.add('anim-in');
+      setTimeout(() => {
+        currentIndex = targetIndex;
+        animatedWordEl.textContent = words[currentIndex];
+        animatedWordEl.classList.remove('anim-out');
+        animatedWordEl.classList.add('anim-in');
 
+        requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              animatedWordEl.classList.remove('anim-in');
-            });
+            animatedWordEl.classList.remove('anim-in');
           });
+        });
 
-          if (currentIndex === words.length - 1) {
-            // Permanently settled on "yours!"
-            setTimeout(() => {
-              animatedWordEl.classList.add('settled');
-            }, 300);
-          } else {
-            setTimeout(transitionToNextWord, 1200);
-          }
-        }, 220);
-      }
+        if (currentIndex === words.length - 1) {
+          // Reached "yours!" — stay for 30 seconds, then loop back
+          animatedWordEl.classList.add('settled');
+          setTimeout(() => {
+            animatedWordEl.classList.remove('settled');
+            stepToWord(0);
+          }, 30000);
+        } else {
+          // Slower swap between intermediate words (2.5 seconds)
+          setTimeout(() => {
+            stepToWord(currentIndex + 1);
+          }, 2500);
+        }
+      }, 260);
     }
 
-    // Begin cycle after initial delay
-    setTimeout(transitionToNextWord, 1400);
+    // Begin cycle after initial 2.5s on the initial word "power."
+    setTimeout(() => {
+      stepToWord(1);
+    }, 2500);
   }
 
   // =========================================================================
