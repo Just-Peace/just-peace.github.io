@@ -43,6 +43,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Version label matching Pallot: `v${VERSION}-g${COMMIT}`
+  const VERSION = "1.0.0";
+  let COMMIT = "47a2d9c";
+
+  function renderVersion(commitSha) {
+    const shortSha = commitSha ? commitSha.slice(0, 7) : COMMIT;
+    const label = shortSha ? `v${VERSION}-g${shortSha}` : `v${VERSION}`;
+    document.querySelectorAll('[data-version]').forEach(el => {
+      el.textContent = label;
+      if (el.tagName === 'A') {
+        el.href = `https://github.com/Just-Peace/just-peace.github.io/commit/${shortSha || ''}`;
+        el.title = `Release ${label}`;
+      }
+    });
+  }
+
+  renderVersion(COMMIT);
+
+  // Sync latest commit dynamically from GitHub
+  fetch('https://api.github.com/repos/Just-Peace/just-peace.github.io/commits/develop', { cache: 'no-cache' })
+    .then(r => r.ok ? r.json() : null)
+    .then(data => {
+      if (data && data.sha) {
+        renderVersion(data.sha);
+      }
+    })
+    .catch(() => {});
+
   // =========================================================================
   // Task 1: Headline Word Animation (cycles through words, settles on "yours!")
   // =========================================================================
