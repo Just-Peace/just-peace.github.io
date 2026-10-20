@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Version label matching Pallot: `v${VERSION}-g${COMMIT}`
   const VERSION = "1.0.0";
-  let COMMIT = "47a2d9c";
+  let COMMIT = "6be65b7";
 
   function renderVersion(commitSha) {
     const shortSha = commitSha ? commitSha.slice(0, 7) : COMMIT;
