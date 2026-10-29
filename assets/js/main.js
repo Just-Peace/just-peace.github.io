@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Version label matching Pallot: `v${VERSION}-g${COMMIT}`
   const VERSION = "1.0.0";
-  let COMMIT = "6be65b7";
+  let COMMIT = "cd0308b";
 
   function renderVersion(commitSha) {
     const shortSha = commitSha ? commitSha.slice(0, 7) : COMMIT;
@@ -235,5 +235,23 @@ document.addEventListener('DOMContentLoaded', () => {
         updateButtonUI();
       }
     });
+  }
+
+  // Dynamic Sticky Footer Height Sync (--footer-h)
+  const footerEl = document.querySelector('.landing-footer');
+  if (footerEl) {
+    const updateFooterHeight = () => {
+      const h = footerEl.offsetHeight;
+      if (h > 0) {
+        document.documentElement.style.setProperty('--footer-h', `${h}px`);
+      }
+    };
+
+    updateFooterHeight();
+    window.addEventListener('resize', updateFooterHeight, { passive: true });
+
+    if (window.ResizeObserver) {
+      new ResizeObserver(updateFooterHeight).observe(footerEl);
+    }
   }
 });
