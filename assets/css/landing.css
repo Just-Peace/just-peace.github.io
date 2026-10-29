@@ -4,6 +4,12 @@
    ========================================================================== */
 
 /* Page layout */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  scroll-padding-bottom: calc(var(--footer-h, 44px) + 16px);
+}
+
 .landing-shell {
   min-height: 100vh;
   display: flex;
@@ -96,7 +102,7 @@
 /* Main Content Wrapper */
 .landing-main {
   flex: 1;
-  padding: 36px 0 60px;
+  padding: 36px 0 calc(var(--footer-h, 44px) + 36px);
 }
 
 /* ==========================================================================
@@ -862,13 +868,29 @@
   border-radius: var(--radius-sm);
 }
 
-/* Simple Static Footer */
+/* Pinned / Sticky Bottom Footer */
 .landing-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
   border-top: 1px solid var(--line);
   background: var(--panel);
-  padding: 24px 0;
-  font-size: 0.85rem;
+  padding: 8px 0 calc(8px + env(safe-area-inset-bottom, 0px));
+  font-size: 0.82rem;
   color: var(--muted);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.footer-copy {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+:root[data-theme="dark"] .landing-footer {
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .footer-row {
@@ -886,27 +908,21 @@
   align-items: center;
 }
 
+.version-label,
 .version-badge {
   color: var(--muted);
   font-size: 0.8rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   text-decoration: none;
-  background: var(--panel-2);
-  border: 1px solid var(--line);
-  padding: 2px 7px;
-  border-radius: var(--radius-sm);
-  transition: color 0.15s, border-color 0.15s;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
-.version-badge:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
-
-/* Toast message */
+/* Toast message (clears the sticky footer) */
 .landing-toast {
   position: fixed;
-  bottom: 24px;
+  bottom: calc(var(--footer-h, 44px) + 16px);
   right: 24px;
   background: var(--text);
   color: var(--panel);
@@ -970,6 +986,30 @@
 @media (max-width: 680px) {
   .nav-link-subtle {
     display: none;
+  }
+  .landing-footer {
+    padding: 7px 0 calc(7px + env(safe-area-inset-bottom, 0px));
+    font-size: 0.78rem;
+  }
+  .footer-row {
+    gap: 6px 12px;
+  }
+  .footer-nav {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-footer {
+    padding: 6px 0 calc(6px + env(safe-area-inset-bottom, 0px));
+    font-size: 0.75rem;
+  }
+  .footer-row {
+    gap: 4px 8px;
+  }
+  .footer-nav {
+    gap: 8px;
+    font-size: 0.75rem;
   }
 }
 
