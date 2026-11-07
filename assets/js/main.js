@@ -19,22 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => toast.classList.remove('visible'), 2600);
   }
 
-  // Copy link
-  const copyBtn = document.getElementById('copy-domain-btn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', async () => {
-      const url = 'https://pallot.just-peace.org';
-      try {
-        await navigator.clipboard.writeText(url);
-        showToast('Link copied: ' + url);
-        copyBtn.textContent = 'Copied!';
-        setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
-      } catch (e) {
-        showToast('Address: ' + url);
-      }
-    });
-  }
-
   // Contact link handler (matches Pallot: constructed on click to protect from scrapers)
   document.querySelectorAll('a[data-contact]').forEach((link) => {
     link.addEventListener('click', (event) => {
@@ -69,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderVersion(data.sha);
       }
     })
-    .catch(() => {});
+    .catch(() => { });
 
   // =========================================================================
   // Task 1: Headline Word Animation (cycles through words, settles on "yours!")
