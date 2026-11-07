@@ -1,6 +1,6 @@
 # Just-Peace Organization Website & Ballot Helper Landing
 
-The official landing page for **Just-Peace** ([`www.just-peace.org`](https://www.just-peace.org)), featuring **Pallot** ([`pallot.just-peace.org`](https://pallot.just-peace.org)), an open-source civic technology platform helping voters research candidates and prepare for Election Day.
+The official landing page for **Just-Peace** ([`www.just-peace.org`](https://www.just-peace.org)), showcasing **Pallot**, an open-source civic technology platform helping voters research candidates and prepare for Election Day (currently offline following elections; returning for the 2027 elections).
 
 ---
 
